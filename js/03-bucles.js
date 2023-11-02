@@ -32,9 +32,9 @@ do{
 /*
 for(inicializar una variable; condicion logica; decrementar o incrementar) en el for siempre va el ; dentro{
     todo el codigo que quiero ejecutar varias veces
-}
+} el for es como el while si no se ejecuta nunca no anda
 */
- 
+
 for(let cuentaregresiva = 10; cuentaregresiva > 0; cuentaregresiva--){
     document.write(`<p>cuenta regresiva N: ${cuentaregresiva} <p>`);
 }
