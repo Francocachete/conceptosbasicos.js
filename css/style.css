@@ -1,3 +1,11 @@
 .parrafoDestacado{
     background: yellowgreen;
 }
+
+table, td{
+    border: 1px solid rgb(180, 73, 73);
+}
+
+td{
+    padding: 10px;
+}
