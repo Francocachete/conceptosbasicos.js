@@ -4,6 +4,15 @@ const personajes = [];
 
 const peliculas = ["interstellar", "matrix", "lotr", "2023", "true", "los juegos del hambre"];
 
+const mostrarPeliculas = (titulo) =>{
+    document.write(`<h2>${titulo}</h2>`);
+document.write("<ul>")
+for(let indicePeliculas = 0; indicePeliculas < peliculas.length; indicePeliculas++){
+    document.write(`<li>${peliculas[indicePeliculas]}</li>`)
+}
+document.write("</ul>")
+}
+
 //mostrar un array
 console.log(peliculas);
 
@@ -11,6 +20,8 @@ document.write(`<p>El primer elemento del array es ${peliculas[0]}</p>`);
 console.log(peliculas.length);
 document.write(`<p>El último elemento del array es ${peliculas[peliculas.length - 1]}</p>`);
 document.write(`<p>un elemento del array es ${peliculas[20]}</p>`);
+
+mostrarPeliculas("lista de peliculas");
 
 document.write("<h2>Lista de peliculas</h2>");
 document.write("<ul>")
@@ -22,13 +33,8 @@ document.write("</ul>")
 //agregar elementos al array
 
 peliculas.unshift("Batman", "iron man")
+mostrarPeliculas(`<h2>Lista de peliculas, con dos pelis nuevas (${peliculas.length})</h2>`)
 
-document.write(`<h2>Lista de peliculas, con dos pelis nuevas (${peliculas.length})</h2>`);
-document.write("<ul>")
-for(let indicePeliculas = 0; indicePeliculas < peliculas.length; indicePeliculas++){
-    document.write(`<li>${peliculas[indicePeliculas]}</li>`)
-}
-document.write("</ul>")
 
 peliculas.splice(3, 0, "scream")
 document.write(`<h2>agregamos la peli scream en el medio (${peliculas.length})</h2>`);
