@@ -33,7 +33,8 @@ document.write("</ul>")
 //agregar elementos al array
 
 peliculas.unshift("Batman", "iron man")
-mostrarPeliculas(`<h2>Lista de peliculas, con dos pelis nuevas (${peliculas.length})</h2>`)
+mostrarPeliculas(`<h2>Lista de peliculas, con dos pelis nuevas (${peliculas.length})</h2>`);
+//es menos codigo usando una funcion en el array
 
 
 peliculas.splice(3, 0, "scream")
@@ -96,4 +97,36 @@ for(let indicePeliculas = 0; indicePeliculas < peliculas.length; indicePeliculas
     document.write(`<li>${peliculas[indicePeliculas]}</li>`)
 }
 document.write("</ul>")
+
+
+peliculas.push("rocky 1", "rocky 2");
+peliculas.splice(2, 0, "rocky 3");
+mostrarPeliculas("agregamos pelis de rocky")
+
+//FILTRAR todas las pelis que sean rocky (filter)
+//const pelisDeRocky = peliculas.filter((pelicula) => pelicula === "rocky")
+const pelisDeRocky = peliculas.filter((pelicula) => pelicula.includes("rocky"));
+console.log(pelisDeRocky)
+
+console.log(peliculas[peliculas.length - 1].includes("rocky"));
+
+//buscar un solo elemento en el array (find)
+const peliBuscada = peliculas.find((itemPelicula) => itemPelicula === "interstellar" );
+const peliBuscada2 = peliculas.find((itemPelicula) => itemPelicula === "jurassic" );
+console.log(peliBuscada)
+
+document.write(`<p>peli buscada: ${peliBuscada}</p>`);
+//document.write(`<p>peli buscada: ${peliBuscada2}</p>`);
+
+//if(peliBuscada2 !== undefined){
+//    document.write(`<p>peli buscada: ${peliBuscada2}</p>`);
+//}else{
+//    document.write(`<p>No se encontro la peli buscada</p>`);
+//}
+
+//Operador TERNARIO,es como un if pero en una sola linea
+//sin el if (condicion logica)? true : false
+
+const respuesta = (peliBuscada2 !== undefined)? peliBuscada2 : "No se encontro la peli buscada"
+document.write(`<p>peli buscada: ${respuesta}</p>`);
 
