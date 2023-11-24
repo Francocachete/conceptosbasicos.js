@@ -125,8 +125,14 @@ document.write(`<p>peli buscada: ${peliBuscada}</p>`);
 //}
 
 //Operador TERNARIO,es como un if pero en una sola linea
+
 //sin el if (condicion logica)? true : false
 
-const respuesta = (peliBuscada2 !== undefined)? peliBuscada2 : "No se encontro la peli buscada"
-document.write(`<p>peli buscada: ${respuesta}</p>`);
+//const respuesta = (peliBuscada2 !== undefined)? peliBuscada2 : "No se encontro la peli buscada"
+//document.write(`<p>peli buscada: ${respuesta}</p>`);
+
+//otra forma
+
+document.write(`<p>peli buscada: ${(peliBuscada2 !== undefined)? peliBuscada2 : "No se encontro la peli buscada"}</p>`);
+
 
