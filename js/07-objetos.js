@@ -14,7 +14,7 @@ const usuario = {
         document.write(`<p>El usuario ${this.nickname} fue logueado</p>`);
     },
     logout: () => {
-        console.log(this)
+        //console.log(this), nunca se usa this en arrow function
         document.write(`<p>El usuario fue deslogueado</p>`);
     }
 
