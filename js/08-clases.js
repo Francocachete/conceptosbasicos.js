@@ -36,6 +36,57 @@ mostrarDatos(){
 }
 };
 
+//metodo de herencia
+class PokemonLegendario extends Pokemon{
+#rareza;
+#ataqueEspecial;
+    constructor(nombre, tipo, peso, altura, evolucion, ataques, numpokedex, fuerza, rareza, ataqueEspecial){
+    super(nombre, tipo, peso, altura, evolucion, ataques, numpokedex, fuerza);
+    this.#rareza = rareza;
+    this.#ataqueEspecial = ataqueEspecial;
+}
+get rareza(){
+    return this.#rareza;
+}
+set rareza(nuevaRareza){
+    if(nuevaRareza.length >= 3 && nuevaRareza.length <=10){
+        this.#rareza = nuevaRareza;
+    }else{
+        alert("ingresaste un valor erroneo")
+    }
+    
+}
+get ataqueEspecial(){
+    return this.#ataqueEspecial;
+}
+set ataqueEspecial(nuevoAtaqueEspecial){
+        this.#ataqueEspecial = nuevoAtaqueEspecial;
+    
+}
+
+//agregar más métodos
+mostrarDatosNuevos(){
+
+}
+//polimorfismo
+mostrarDatos(){
+    document.write(`<h2>Pokemon: ${this.nombre}</h2>
+    <ul>
+    <li>Num Pokedex: ${this.numpokedex}</li>
+    <li>Tipo: ${this.tipo}</li>
+    <li>Peso: ${this.peso}</li>
+    <li>Altura: ${this.altura}</li>
+    <li>Evolucion: ${this.evolucion}</li>
+    <li>Rareza: ${this.rareza}</li>
+    <li>Ataques Especiales: ${this.ataqueEspecial}</li>
+    
+    </ul>`)
+}
+
+}
+
+
+
 //crear o instanciar un objeto
 const charmander = new Pokemon("charmander", "fuego", 15, 1.20, ["charmeleon", "charizard"], ["blaze", "ascuas", "lanzallamas"], 4, 4);
 const togepi = new Pokemon("togepi", "hada", 1.5, 0.3, ["togetic", "togekiss"], ["gracia serena", "dicha y entusiasmo", "placaje"], 175, 2);
@@ -51,3 +102,7 @@ document.write(`<h2>Tipo: ${charmander.tipo}</h2>`);
 charmander.mostrarDatos()
 
 togepi.mostrarDatos()
+
+const mewtwo = new PokemonLegendario("mewtwo", "psíquico", 122, 2, [], ["placaje", "confusión"], 150, 7, "infrecuente", ["charge beam", "electro ball"]);
+
+mewtwo.mostrarDatos();
